@@ -47,7 +47,6 @@ const HotelPages = () => {
         ? <FormServer  hotelId={hotel?.id}/>
         : <h4>If you want to make a reservation, please <Link to='/login'>Login</Link></h4>
       }
-      <FormServer />
       <OtherHotels
         hotel={hotel}
         />

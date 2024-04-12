@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReverseCard = ({reserve, setreserverSelected}) => {
+const ReverseCard = ({reserve, setreserverSelected, deleteBooking}) => {
 
   const checkIn = new Date(reserve.checkIn)
   const checkOut = new Date(reserve.checkOut)
@@ -12,7 +12,12 @@ const ReverseCard = ({reserve, setreserverSelected}) => {
       reservationDays,
       subtotal: reserve.hotel.price * reservationDays
     }
-    setreserverSelected(reserve)
+    setreserverSelected(obj)
+  }
+
+  const hanldedeleteBooking = () => {
+    const url = `https://hotels-api.academlo.tech/bookings/${reserve.id}`
+    deleteBooking(url, reserve.id)
   }
   
   return (
@@ -32,7 +37,7 @@ const ReverseCard = ({reserve, setreserverSelected}) => {
       </ul>
     </section>
     <footer>
-      <button>
+      <button onClick={hanldedeleteBooking}>
         <i className='bx bx-trash'></i>
       </button>
     </footer>

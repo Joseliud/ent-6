@@ -26,8 +26,9 @@ const FormServer = ({hotelId}) => {
             <span>Check-out</span>
             <input {...register('checkOut')} type="date" />
         </label>
+        <button>Submit</button>
     </form>
-    <button>Submit</button>
+   
    </section>
   )
 }
